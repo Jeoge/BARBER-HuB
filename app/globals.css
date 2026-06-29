@@ -1,22 +1,61 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #0f0f12;
-  --color-ink-soft: #1a1a20;
-  --color-cream: #f5f1e8;
-  --color-gold: #c8a24b;
-  --color-gold-soft: #e0c478;
+  /* カラーパレット：白背景・黒文字・ビビッドピンク */
+  --color-paper: #ffffff;
+  --color-ink: #111114;
+  --color-muted: #6b7280;
+  --color-line: #ededed;
+  --color-pink: #ff2d7e;
+  --color-pink-soft: #ffe6f0;
+  --color-pink-ink: #d6005c;
 
-  --font-sans: var(--font-system), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
+  --font-serif: "Times New Roman", "Hiragino Mincho ProN", "Yu Mincho", Georgia, serif;
 }
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background-color: var(--color-ink);
-  color: var(--color-cream);
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+/* 横スクロール領域のスクロールバーを控えめに */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* 雑誌的な英字見出し */
+.font-display {
+  font-family: var(--font-serif);
+  letter-spacing: 0.01em;
+}
+
+/* カバー画像のプレースホルダ用テクスチャ（印刷物のような質感）。
+   本番では public/images の写真に差し替えやすいよう、背景は親のグラデーションを使う。 */
+.cover-grain {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1.2px);
+  background-size: 4px 4px;
+}
+.cover-vignette {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.12) 45%, transparent 100%);
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

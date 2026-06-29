@@ -1,9 +1,17 @@
 # BARBER HUB
 
-One Success. Shared Success.
+成功を共有しよう。 — One Success. Shared Success.
 
-理容業界向けプラットフォーム「BARBER HUB」のMVPです。
-スマホで開けるトップページを Next.js + React + TypeScript + Tailwind CSS で実装しています。
+理容師が毎朝開く「業界ポータル」BARBER HUB のMVPです。
+AI編集部のデイリーブリーフ、注目記事、フィード、Q&A、講習会アーカイブ、求人などを
+1枚のトップページにまとめています（スマホファースト）。
+Next.js + React + TypeScript + Tailwind CSS で実装。
+
+## 写真について（重要）
+
+画像エリアは現在、印刷物風のプレースホルダ（デュオトーン）で表示しています。
+本物の写真に差し替える方法は [`public/images/README.md`](public/images/README.md) を参照してください。
+`public/images/` に写真を置き、`lib/data.ts` に `image` を1行足すだけで切り替わります。
 
 ## 必要なもの
 
